@@ -7,12 +7,11 @@ package Vista;
 import Controlador.ControladorLista;
 import java.util.ArrayList;
 import java.util.Arrays;
-
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
-import jdk.nashorn.internal.ir.BreakNode;
+import jdk.nashorn.internal.parser.TokenType;
 
 /**
  *
@@ -28,6 +27,8 @@ public class InterfazPrincipal extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
     }
+    
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -60,6 +61,7 @@ public class InterfazPrincipal extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("VEHICULOS");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -266,22 +268,26 @@ public class InterfazPrincipal extends javax.swing.JFrame {
                 if (Arrays.asList(lista.get(i)).contains(DatosEliminar)) {
                     indiceArreglo = i;
                     break;
+                }else{
+                    JOptionPane.showMessageDialog(null, "El numero no se encuentra en la lista", "NUMERO NO VALIDO", JOptionPane.INFORMATION_MESSAGE);
+                }
+            }break;
+        }
+//        if (indiceArreglo == 1) {
+            for (int i = 0; i < lista.size(); i++) {
+                for (int j = 0; j < lista.size(); j++) {
+                    if (Arrays.asList(lista.get(i)).contains(DatosEliminar)) {
+                        lista.remove(indiceArreglo);
+                        int pos = indiceArreglo +1;
+                        ((DefaultTableModel) tblVehiculos.getModel()).removeRow(indiceArreglo);
+                        JOptionPane.showMessageDialog(null, "El elemento "+DatosEliminar+" encontrado en la posicion "+pos+" ha sido eliminado", "ELEMENTO ELIMINADO", JOptionPane.WARNING_MESSAGE);
+                        break;
+                    }break;
                 }
             }
-        }
-        for (int i = 0; i < lista.size(); i++) {
-            for (int j = 0; j < lista.size(); j++) {
-                if (Arrays.asList(lista.get(i)).contains(DatosEliminar)) {
-                    lista.remove(indiceArreglo);
-                    ((DefaultTableModel) tblVehiculos.getModel()).removeRow(indiceArreglo);
-                    break;
-                }break;
-//                else {
-//                    JOptionPane.showMessageDialog(null, "El elemento que desea eliminar no esta dentro de las marcas", "NO EXISTE MARCA", JOptionPane.ERROR_MESSAGE);
-//                    break;
-//                }
-            }
-        }
+//        } else {
+//            JOptionPane.showMessageDialog(null, "El elemento que desea eliminar no esta dentro de las marcas", "NO EXISTE MARCA", JOptionPane.ERROR_MESSAGE);
+//        }
     }//GEN-LAST:event_btnEliminarValorActionPerformed
 
     private void btnAgregarValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarValorActionPerformed
@@ -330,16 +336,21 @@ public class InterfazPrincipal extends javax.swing.JFrame {
 
     private void btnBusquedaLinealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBusquedaLinealActionPerformed
         // TODO add your handling code here:
-        String DatosEliminar = JOptionPane.showInputDialog(null, "Escriba la marca que desea eliminar", "ELIMINAR MARCA", JOptionPane.WARNING_MESSAGE);
-        Integer index = ControladorLista.Secuencial(lista, DatosEliminar)+1;
-                        
+        String DatosBuscar = JOptionPane.showInputDialog(null, "Escriba la marca que desea buscar", "BUSCAR VEHICULO", JOptionPane.WARNING_MESSAGE);
+        Integer index = ControladorLista.Secuencial(lista, DatosBuscar)+1;
+        
+        
+        
         for (int i = 0; i < lista.size(); i++) {
             for (int j = 0; j < lista.size(); j++) {
                 if (index != null) {
-                    JOptionPane.showMessageDialog(null, "Elemento encontrado en el elemento numero " + index, "ENCONTRADO", JOptionPane.INFORMATION_MESSAGE);
-                    System.out.println("Encontrado en el elemento numero" + index);
+
+                    String Seleccionado = (Arrays.toString(lista.get(index - 1)));
+
+                    JOptionPane.showMessageDialog(null, "Elemento " + DatosBuscar + " encontrado en el la lista numero " + index + " el elemento completo es " + Seleccionado, "ENCONTRADO", JOptionPane.INFORMATION_MESSAGE);
+                    System.out.println("Encontrado en el elemento numero " + index);
                     break;
-                } 
+                }
                 break;
 //                else {
 //                    JOptionPane.showMessageDialog(null, "Elemento no encontrado", "NO ENCONTRADO", JOptionPane.INFORMATION_MESSAGE);
@@ -352,6 +363,8 @@ public class InterfazPrincipal extends javax.swing.JFrame {
 
     private void btnBusquedaBinariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBusquedaBinariaActionPerformed
         // TODO add your handling code here:
+        
+        
         
     }//GEN-LAST:event_btnBusquedaBinariaActionPerformed
 
