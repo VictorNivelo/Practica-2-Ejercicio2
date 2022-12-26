@@ -4,6 +4,7 @@
  */
 package Vista;
 
+import Controlador.ControladorLista;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -246,18 +247,18 @@ public class InterfazPrincipal extends javax.swing.JFrame {
 
     private void btnImprimirListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirListaActionPerformed
         // TODO add your handling code here:
-        System.out.println("=============== LISTA COMPLETA =================");
+        System.out.println("==================== LISTA COMPLETA ======================");
         for (String[] arreglo : lista) {
                 System.out.println(Arrays.toString(arreglo));
             }
-        System.out.println("================================================");
+        System.out.println("==========================================================");
     }//GEN-LAST:event_btnImprimirListaActionPerformed
 
     private void btnEliminarValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarValorActionPerformed
         // TODO add your handling code here:
         
         int indiceArreglo = -1;
-        String DatosEliminar = JOptionPane.showInputDialog(null, "Escriba el elemento que desea eliminar", "ELIMINAR ELEMENTO", JOptionPane.WARNING_MESSAGE);
+        String DatosEliminar = JOptionPane.showInputDialog(null, "Escriba la marca que desea eliminar", "ELIMINAR MARCA", JOptionPane.WARNING_MESSAGE);
 
         for (int i = 0; i < lista.size(); i++) {
             if (Arrays.asList(lista.get(i)).contains(DatosEliminar)) {
@@ -269,13 +270,14 @@ public class InterfazPrincipal extends javax.swing.JFrame {
             if (Arrays.asList(lista.get(i)).contains(DatosEliminar)) {
                 lista.remove(indiceArreglo);
                 ((DefaultTableModel) tblVehiculos.getModel()).removeRow(indiceArreglo);
-            } else {
-                JOptionPane.showMessageDialog(null, "El elemento que desea eliminar no esta dentro del arreglo", "NO EXISTE", JOptionPane.ERROR_MESSAGE);
+                break;
             }
+            else {
+                JOptionPane.showMessageDialog(null, "El elemento que desea eliminar no esta dentro de las ,arcas", "NO EXISTE MARCA", JOptionPane.ERROR_MESSAGE);
+                break;
+            }
+            
         }
-        
-        
-        
     }//GEN-LAST:event_btnEliminarValorActionPerformed
 
     private void btnAgregarValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarValorActionPerformed
@@ -324,7 +326,15 @@ public class InterfazPrincipal extends javax.swing.JFrame {
 
     private void btnBusquedaLinealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBusquedaLinealActionPerformed
         // TODO add your handling code here:
-        
+        String DatosEliminar = JOptionPane.showInputDialog(null, "Escriba la marca que desea eliminar", "ELIMINAR MARCA", JOptionPane.WARNING_MESSAGE);
+        Integer index = ControladorLista.Secuencial(lista, DatosEliminar)+1;
+        for (int i = 0; i < lista.size(); i++) {
+            if (index != null) {
+                System.out.println("Elemento encontrado en " + index);
+            } else {
+                System.out.println("Elemento no encontrado");
+            }
+        }
     }//GEN-LAST:event_btnBusquedaLinealActionPerformed
 
     private void btnBusquedaBinariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBusquedaBinariaActionPerformed
