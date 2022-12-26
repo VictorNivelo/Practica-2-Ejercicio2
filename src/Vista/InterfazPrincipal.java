@@ -265,37 +265,60 @@ public class InterfazPrincipal extends javax.swing.JFrame {
                 break;
             }
         }
+        for (int i = 0; i < lista.size(); i++) {
+            if (Arrays.asList(lista.get(i)).contains(DatosEliminar)) {
+                lista.remove(indiceArreglo);
+                ((DefaultTableModel) tblVehiculos.getModel()).removeRow(indiceArreglo);
+            } else {
+                JOptionPane.showMessageDialog(null, "El elemento que desea eliminar no esta dentro del arreglo", "NO EXISTE", JOptionPane.ERROR_MESSAGE);
+            }
+        }
         
-        lista.remove(indiceArreglo);
         
         
-        ((DefaultTableModel) tblVehiculos.getModel()).removeRow(indiceArreglo);
     }//GEN-LAST:event_btnEliminarValorActionPerformed
 
     private void btnAgregarValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarValorActionPerformed
         // TODO add your handling code here://
-        String Marca = txtMarcaVehiculo.getText();
-        String Año = txtAñoVehiculo.getText();
-        String Modelo = txtModeloVehiculo.getText();
-        String Precio = txtPrecioVehiculo.getText();
-        String Color = txtColorVehiculo.getText();
         
-        String[] DatosAutos = new String[5];
-
-        DatosAutos[0] = Marca;
-        DatosAutos[1] = Año;
-        DatosAutos[2] = Modelo;
-        DatosAutos[3] = Precio;
-        DatosAutos[4] = Color;
-        
-        if(lista.size() < 20){
-            lista.add(DatosAutos);
-        }else{
-            JOptionPane.showMessageDialog(null, "El numero de autos maximos es de 20", "NUMERO MAXIMO ALCANZADO", JOptionPane.INFORMATION_MESSAGE);
+        if(txtMarcaVehiculo.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "El cuadro de texto de la marca del vehiculo esta vacia", "ELEMENTO VACIO", JOptionPane.INFORMATION_MESSAGE);
         }
+        else if(txtAñoVehiculo.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "El cuadro de texto del año del vehiculo esta vacia", "ELEMENTO VACIO", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else if(txtModeloVehiculo.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "El cuadro de texto del modelo del vehiculo esta vacia", "ELEMENTO VACIO", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else if(txtPrecioVehiculo.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "El cuadro de texto del precio del vehiculo esta vacia", "ELEMENTO VACIO", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else if(txtColorVehiculo.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "El cuadro de texto del color del vehiculo esta vacia", "ELEMENTO VACIO", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+            String Marca = txtMarcaVehiculo.getText();
+            String Año = txtAñoVehiculo.getText();
+            String Modelo = txtModeloVehiculo.getText();
+            String Precio = txtPrecioVehiculo.getText();
+            String Color = txtColorVehiculo.getText();
 
-        TableModel modelo = new DefaultTableModel(lista.toArray(new String[lista.size()][]), new String[]{"Marca", "Año", "Modelo","Precio","Color"});
-        tblVehiculos.setModel(modelo);
+            String[] DatosAutos = new String[5];
+
+            DatosAutos[0] = Marca;
+            DatosAutos[1] = Año;
+            DatosAutos[2] = Modelo;
+            DatosAutos[3] = Precio;
+            DatosAutos[4] = Color;
+
+            if (lista.size() < 20) {
+                lista.add(DatosAutos);
+            } else {
+                JOptionPane.showMessageDialog(null, "El numero de autos maximos es de 20", "NUMERO MAXIMO ALCANZADO", JOptionPane.INFORMATION_MESSAGE);
+            }
+            TableModel modelo = new DefaultTableModel(lista.toArray(new String[lista.size()][]), new String[]{"Marca", "Año", "Modelo", "Precio", "Color"});
+            tblVehiculos.setModel(modelo);
+        }
 
     }//GEN-LAST:event_btnAgregarValorActionPerformed
 
