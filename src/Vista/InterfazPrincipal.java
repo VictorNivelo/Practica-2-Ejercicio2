@@ -11,15 +11,18 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
-import jdk.nashorn.internal.parser.TokenType;
+
+
 
 /**
  *
  * @author Victor
  */
-public class InterfazPrincipal extends javax.swing.JFrame {
+public class InterfazPrincipal extends javax.swing.JFrame{
     
-    List<String[]> lista = new ArrayList<String[]>();
+    List<String[]> lista = new ArrayList<>();
+    
+
     /**
      * Creates new form InterfazPrincipal
      */
@@ -27,7 +30,6 @@ public class InterfazPrincipal extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
     }
-    
     
     
     /**
@@ -250,11 +252,14 @@ public class InterfazPrincipal extends javax.swing.JFrame {
 
     private void btnImprimirListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirListaActionPerformed
         // TODO add your handling code here:
+        
         System.out.println("==================== LISTA COMPLETA ======================");
         for (String[] arreglo : lista) {
                 System.out.println(Arrays.toString(arreglo));
             }
         System.out.println("==========================================================");
+        
+        
     }//GEN-LAST:event_btnImprimirListaActionPerformed
 
     private void btnEliminarValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarValorActionPerformed
@@ -267,24 +272,30 @@ public class InterfazPrincipal extends javax.swing.JFrame {
             for (int j = 0; j < lista.size(); j++) {
                 if (Arrays.asList(lista.get(i)).contains(DatosEliminar)) {
                     indiceArreglo = i;
-                    break;
-                }else{
-                    JOptionPane.showMessageDialog(null, "El numero no se encuentra en la lista", "NUMERO NO VALIDO", JOptionPane.INFORMATION_MESSAGE);
+                    
+//                }else{
+//                    JOptionPane.showMessageDialog(null, "El numero no se encuentra en la lista", "NUMERO NO VALIDO", JOptionPane.INFORMATION_MESSAGE);
+//                    
                 }
-            }break;
-        }
-//        if (indiceArreglo == 1) {
-            for (int i = 0; i < lista.size(); i++) {
-                for (int j = 0; j < lista.size(); j++) {
-                    if (Arrays.asList(lista.get(i)).contains(DatosEliminar)) {
-                        lista.remove(indiceArreglo);
-                        int pos = indiceArreglo +1;
-                        ((DefaultTableModel) tblVehiculos.getModel()).removeRow(indiceArreglo);
-                        JOptionPane.showMessageDialog(null, "El elemento "+DatosEliminar+" encontrado en la posicion "+pos+" ha sido eliminado", "ELEMENTO ELIMINADO", JOptionPane.WARNING_MESSAGE);
-                        break;
-                    }break;
-                }
+                break;
             }
+        }
+        
+//        JOptionPane.showMessageDialog(null, "El numero no se encuentra en la lista", "NUMERO NO VALIDO", JOptionPane.INFORMATION_MESSAGE);
+        
+//        if (indiceArreglo == 1) {
+        for (int i = 0; i < lista.size(); i++) {
+            for (int j = 0; j < lista.size(); j++) {
+                if (Arrays.asList(lista.get(i)).contains(DatosEliminar)) {
+                    lista.remove(indiceArreglo);
+                    int pos = indiceArreglo + 1;
+                    ((DefaultTableModel) tblVehiculos.getModel()).removeRow(indiceArreglo);
+                    JOptionPane.showMessageDialog(null, "El elemento " + DatosEliminar + " encontrado en la posicion " + pos + " ha sido eliminado", "ELEMENTO ELIMINADO", JOptionPane.WARNING_MESSAGE);
+                    break;
+                }
+                break;
+            }
+        }
 //        } else {
 //            JOptionPane.showMessageDialog(null, "El elemento que desea eliminar no esta dentro de las marcas", "NO EXISTE MARCA", JOptionPane.ERROR_MESSAGE);
 //        }
@@ -340,32 +351,65 @@ public class InterfazPrincipal extends javax.swing.JFrame {
         Integer index = ControladorLista.Secuencial(lista, DatosBuscar)+1;
         
         
-        
         for (int i = 0; i < lista.size(); i++) {
             for (int j = 0; j < lista.size(); j++) {
                 if (index != null) {
-
                     String Seleccionado = (Arrays.toString(lista.get(index - 1)));
 
                     JOptionPane.showMessageDialog(null, "Elemento " + DatosBuscar + " encontrado en el la lista numero " + index + " el elemento completo es " + Seleccionado, "ENCONTRADO", JOptionPane.INFORMATION_MESSAGE);
                     System.out.println("Encontrado en el elemento numero " + index);
-                    break;
-                }
-                break;
+                    
+                }break;
 //                else {
 //                    JOptionPane.showMessageDialog(null, "Elemento no encontrado", "NO ENCONTRADO", JOptionPane.INFORMATION_MESSAGE);
 //                    System.out.println("Elemento no encontrado");
-//                    break;
-//                }break;
             }break;
         }
+        
     }//GEN-LAST:event_btnBusquedaLinealActionPerformed
 
     private void btnBusquedaBinariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBusquedaBinariaActionPerformed
         // TODO add your handling code here:
+        for (int i = 0; i < lista.size(); i++) {
+            for(int j = 0; j < lista.size(); j++){
+                
+            String[] firstArray = lista.get(i);
+            String arreglo = Arrays.asList(firstArray).toString();
+
+//            System.out.println(Arrays.asList(firstArray));
+//            System.out.println(""+arreglo);
+            List<String> list = Arrays.asList(arreglo);
+
+//            Collections.sort(list);
+
+            System.out.println("" + list);
+
+            String elementToFind = JOptionPane.showInputDialog(null, "verga");
         
-        
-        
+            int izquierda = 0;
+            int derecha = lista.size();
+            int mitad = -1;
+
+            while (izquierda <= derecha) {
+                mitad = ((izquierda + derecha) / 2);
+
+                String mitadElemento = list.get(mitad);
+
+                if (mitadElemento.equals(elementToFind)) {
+                    break;
+                } else if (mitadElemento.compareTo(elementToFind) < 0) {
+                    izquierda = mitad + 1;
+                } else {
+                    derecha = mitad - 1;
+                }
+            }
+            if (mitad != -1) {
+                System.out.println("Elemento encontrado en " + (mitad + 1));
+            } else {
+                System.out.println("Elemento no encontrado");
+            }
+        }
+        }
     }//GEN-LAST:event_btnBusquedaBinariaActionPerformed
 
     /**
