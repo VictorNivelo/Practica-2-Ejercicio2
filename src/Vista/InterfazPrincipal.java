@@ -4,19 +4,29 @@
  */
 package Vista;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+
 /**
  *
  * @author Victor
  */
 public class InterfazPrincipal extends javax.swing.JFrame {
-
+    
+    List<String[]> lista = new ArrayList<String[]>();
     /**
      * Creates new form InterfazPrincipal
      */
     public InterfazPrincipal() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,21 +36,278 @@ public class InterfazPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        btnAgregarValor = new javax.swing.JButton();
+        btnEliminarValor = new javax.swing.JButton();
+        btnImprimirLista = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        txtMarcaVehiculo = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        txtAñoVehiculo = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        txtModeloVehiculo = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        txtPrecioVehiculo = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblVehiculos = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        txtColorVehiculo = new javax.swing.JTextField();
+        btnBusquedaLineal = new javax.swing.JButton();
+        btnBusquedaBinaria = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("VEHICULOS");
+
+        btnAgregarValor.setText("AGREGAR VALOR");
+        btnAgregarValor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarValorActionPerformed(evt);
+            }
+        });
+
+        btnEliminarValor.setText("ELIMINAR VALOR");
+        btnEliminarValor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarValorActionPerformed(evt);
+            }
+        });
+
+        btnImprimirLista.setText("IMPRIMIR LISTA");
+        btnImprimirLista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnImprimirListaActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("MARCA DEL VEHICULO");
+
+        txtMarcaVehiculo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("AÑO DEL VEHICULO");
+
+        txtAñoVehiculo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("MODELO DEL VEHICULO");
+
+        txtModeloVehiculo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("PRECIO DEL VEHICULO");
+
+        txtPrecioVehiculo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        tblVehiculos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tblVehiculos);
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("COLOR DEL VEHICULO");
+
+        txtColorVehiculo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        btnBusquedaLineal.setText("BUSQIEDA LINEAL");
+        btnBusquedaLineal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBusquedaLinealActionPerformed(evt);
+            }
+        });
+
+        btnBusquedaBinaria.setText("BUSQUEDA BINARIA");
+        btnBusquedaBinaria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBusquedaBinariaActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnBusquedaLineal, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnBusquedaBinaria, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnImprimirLista, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(txtPrecioVehiculo, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
+                                    .addComponent(txtMarcaVehiculo, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnAgregarValor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(txtColorVehiculo)
+                                            .addGap(256, 256, 256))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(txtAñoVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(txtModeloVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(btnEliminarValor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtMarcaVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtAñoVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtModeloVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtPrecioVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtColorVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAgregarValor)
+                    .addComponent(btnEliminarValor))
+                .addGap(24, 24, 24)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnImprimirLista)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBusquedaBinaria)
+                    .addComponent(btnBusquedaLineal))
+                .addGap(24, 24, 24)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnImprimirListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirListaActionPerformed
+        // TODO add your handling code here:
+        System.out.println("=============== LISTA COMPLETA =================");
+        for (String[] arreglo : lista) {
+                System.out.println(Arrays.toString(arreglo));
+            }
+        System.out.println("================================================");
+    }//GEN-LAST:event_btnImprimirListaActionPerformed
+
+    private void btnEliminarValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarValorActionPerformed
+        // TODO add your handling code here:
+        
+        int indiceArreglo = -1;
+        String DatosEliminar = JOptionPane.showInputDialog(null, "Escriba el elemento que desea eliminar", "ELIMINAR ELEMENTO", JOptionPane.WARNING_MESSAGE);
+
+        for (int i = 0; i < lista.size(); i++) {
+            if (Arrays.asList(lista.get(i)).contains(DatosEliminar)) {
+                indiceArreglo = i;
+                break;
+            }
+        }
+        
+        lista.remove(indiceArreglo);
+        
+        
+        ((DefaultTableModel) tblVehiculos.getModel()).removeRow(indiceArreglo);
+    }//GEN-LAST:event_btnEliminarValorActionPerformed
+
+    private void btnAgregarValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarValorActionPerformed
+        // TODO add your handling code here://
+        String Marca = txtMarcaVehiculo.getText();
+        String Año = txtAñoVehiculo.getText();
+        String Modelo = txtModeloVehiculo.getText();
+        String Precio = txtPrecioVehiculo.getText();
+        String Color = txtColorVehiculo.getText();
+        
+        String[] DatosAutos = new String[5];
+
+        DatosAutos[0] = Marca;
+        DatosAutos[1] = Año;
+        DatosAutos[2] = Modelo;
+        DatosAutos[3] = Precio;
+        DatosAutos[4] = Color;
+        
+        if(lista.size() < 20){
+            lista.add(DatosAutos);
+        }else{
+            JOptionPane.showMessageDialog(null, "El numero de autos maximos es de 20", "NUMERO MAXIMO ALCANZADO", JOptionPane.INFORMATION_MESSAGE);
+        }
+
+        TableModel modelo = new DefaultTableModel(lista.toArray(new String[lista.size()][]), new String[]{"Marca", "Año", "Modelo","Precio","Color"});
+        tblVehiculos.setModel(modelo);
+
+    }//GEN-LAST:event_btnAgregarValorActionPerformed
+
+    private void btnBusquedaLinealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBusquedaLinealActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnBusquedaLinealActionPerformed
+
+    private void btnBusquedaBinariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBusquedaBinariaActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnBusquedaBinariaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +345,25 @@ public class InterfazPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregarValor;
+    private javax.swing.JButton btnBusquedaBinaria;
+    private javax.swing.JButton btnBusquedaLineal;
+    private javax.swing.JButton btnEliminarValor;
+    private javax.swing.JButton btnImprimirLista;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    public static javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    public static javax.swing.JTable tblVehiculos;
+    public static javax.swing.JTextField txtAñoVehiculo;
+    public static javax.swing.JTextField txtColorVehiculo;
+    public static javax.swing.JTextField txtMarcaVehiculo;
+    public static javax.swing.JTextField txtModeloVehiculo;
+    public static javax.swing.JTextField txtPrecioVehiculo;
     // End of variables declaration//GEN-END:variables
 }

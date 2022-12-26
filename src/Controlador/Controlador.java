@@ -4,10 +4,16 @@
  */
 package Controlador;
 
+
+
 /**
  *
  * @author Victor
  */
-public class Controlador {
+public class Controlador{
     
+    public static void Lista(){
+        
+    }
+
 }
