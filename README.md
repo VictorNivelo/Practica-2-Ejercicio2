@@ -1,4 +1,4 @@
-# Practica-2-Busqueda
+# Practica-2-Busqueda Ejercicio 2
 ### Práctica en la cual se busca la implementación de busqueda tanto lineal como binaria
 
 #### Practica realizada en java
