@@ -306,19 +306,19 @@ public class InterfazPrincipal extends javax.swing.JFrame{
         // TODO add your handling code here://
         
         if(txtMarcaVehiculo.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null, "El cuadro de texto de la marca del vehiculo esta vacia", "ELEMENTO VACIO", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El cuadro de texto de la entrada del restaurante esta vacia", "ELEMENTO VACIO", JOptionPane.INFORMATION_MESSAGE);
         }
         else if(txtAñoVehiculo.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null, "El cuadro de texto del año del vehiculo esta vacia", "ELEMENTO VACIO", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El cuadro de texto del las sopas del restaurante esta vacia", "ELEMENTO VACIO", JOptionPane.INFORMATION_MESSAGE);
         }
         else if(txtModeloVehiculo.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null, "El cuadro de texto del modelo del vehiculo esta vacia", "ELEMENTO VACIO", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El cuadro de texto del plato principal del restaurante esta vacia", "ELEMENTO VACIO", JOptionPane.INFORMATION_MESSAGE);
         }
         else if(txtPrecioVehiculo.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null, "El cuadro de texto del precio del vehiculo esta vacia", "ELEMENTO VACIO", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El cuadro de texto del plato segundario del restaurante esta vacia", "ELEMENTO VACIO", JOptionPane.INFORMATION_MESSAGE);
         }
         else if(txtColorVehiculo.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null, "El cuadro de texto del color del vehiculo esta vacia", "ELEMENTO VACIO", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El cuadro de texto del postre del restaurante esta vacia", "ELEMENTO VACIO", JOptionPane.INFORMATION_MESSAGE);
         }
         else{
             String Marca = txtMarcaVehiculo.getText();
@@ -338,9 +338,9 @@ public class InterfazPrincipal extends javax.swing.JFrame{
             if (lista.size() < 20) {
                 lista.add(DatosAutos);
             } else {
-                JOptionPane.showMessageDialog(null, "El numero de autos maximos es de 20", "NUMERO MAXIMO ALCANZADO", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "El numero de pedidos maximos es de 20", "NUMERO MAXIMO ALCANZADO", JOptionPane.INFORMATION_MESSAGE);
             }
-            TableModel modelo = new DefaultTableModel(lista.toArray(new String[lista.size()][]), new String[]{"Marca", "Año", "Modelo", "Precio", "Color"});
+            TableModel modelo = new DefaultTableModel(lista.toArray(new String[lista.size()][]), new String[]{"Entrada", "Sopa", "Plato principal", "Plato segundario", "Postre"});
             tblVehiculos.setModel(modelo);
         }
 
@@ -348,7 +348,7 @@ public class InterfazPrincipal extends javax.swing.JFrame{
 
     private void btnBusquedaLinealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBusquedaLinealActionPerformed
         // TODO add your handling code here:
-        String DatosBuscar = JOptionPane.showInputDialog(null, "Escriba la marca que desea buscar", "BUSCAR VEHICULO", JOptionPane.WARNING_MESSAGE);
+        String DatosBuscar = JOptionPane.showInputDialog(null, "Escriba la elemento que desea buscar", "BUSCAR Plato", JOptionPane.WARNING_MESSAGE);
         Integer index = ControladorLista.Secuencial(lista, DatosBuscar)+1;
         
         
@@ -385,7 +385,7 @@ public class InterfazPrincipal extends javax.swing.JFrame{
 
             System.out.println("" + list);
 
-            String elementToFind = JOptionPane.showInputDialog(null, "verga");
+            String elementToFind = JOptionPane.showInputDialog(null, "no encontrado");
         
             int izquierda = 0;
             int derecha = lista.size();
