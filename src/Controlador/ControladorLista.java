@@ -12,12 +12,22 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 
 
-
 /**
  *
  * @author Victor
  */
 public class ControladorLista extends InterfazPrincipal{ 
+    
+//    public static void Guardar() throws IOException{
+//        
+//        Gson gson = new Gson();
+//
+//        JsonArray jsonArray = gson.toJsonTree("").getAsJsonArray();
+//
+//        try (FileWriter writer = new FileWriter("lista.json")) {
+//            writer.write(jsonArray.toString());
+//        }
+//    }
     
     //busqueda dentro de la lista 
     public static boolean search(List<String[]> list, String item) {

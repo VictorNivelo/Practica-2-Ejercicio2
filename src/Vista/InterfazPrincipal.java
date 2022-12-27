@@ -258,7 +258,8 @@ public class InterfazPrincipal extends javax.swing.JFrame{
                 System.out.println(Arrays.toString(arreglo));
             }
         System.out.println("==========================================================");
-        
+        System.out.println("Guardando en json...");
+        System.out.println("Guardado");
         
     }//GEN-LAST:event_btnImprimirListaActionPerformed
 
