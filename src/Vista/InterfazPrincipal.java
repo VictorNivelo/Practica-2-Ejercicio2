@@ -67,7 +67,7 @@ public class InterfazPrincipal extends javax.swing.JFrame{
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("VEHICULOS");
+        jLabel1.setText("RESTAURANTES");
 
         btnAgregarValor.setText("AGREGAR VALOR");
         btnAgregarValor.addActionListener(new java.awt.event.ActionListener() {
@@ -92,25 +92,25 @@ public class InterfazPrincipal extends javax.swing.JFrame{
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("MARCA DEL VEHICULO");
+        jLabel6.setText("ENTRADAS");
 
         txtMarcaVehiculo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("AÑO DEL VEHICULO");
+        jLabel7.setText("SOPAS");
 
         txtAñoVehiculo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("MODELO DEL VEHICULO");
+        jLabel8.setText("PLATOS FUERTES");
 
         txtModeloVehiculo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("PRECIO DEL VEHICULO");
+        jLabel9.setText("PLATOS SEGUNDARIOS");
 
         txtPrecioVehiculo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
@@ -129,7 +129,7 @@ public class InterfazPrincipal extends javax.swing.JFrame{
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("COLOR DEL VEHICULO");
+        jLabel2.setText("POSTRES");
 
         txtColorVehiculo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
@@ -258,8 +258,8 @@ public class InterfazPrincipal extends javax.swing.JFrame{
                 System.out.println(Arrays.toString(arreglo));
             }
         System.out.println("==========================================================");
-        System.out.println("Guardando en json...");
-        System.out.println("Guardado");
+//        System.out.println("Guardando en json...");
+//        System.out.println("Guardado");
         
     }//GEN-LAST:event_btnImprimirListaActionPerformed
 

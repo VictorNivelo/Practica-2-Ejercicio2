@@ -9,54 +9,54 @@ package Modelo;
  *
  * @author Victor
  */
-public class Autos {
+public class Restaurante {
 
-    public Autos(String showInputDialog, String showInputDialog1) {
+    public Restaurante(String showInputDialog, String showInputDialog1) {
     }
-    private String Marca;
-    private String Modelo;
-    private String Color;
-    private String Precio;
-    private String año;
+    private String Entradas;
+    private String Sopas;
+    private String PlatoFuerte;
+    private String PlatoSegundario;
+    private String Postres;
 
     public String getMarca() {
-        return Marca;
+        return Entradas;
     }
 
     public void setMarca(String Marca) {
-        this.Marca = Marca;
+        this.Entradas = Marca;
     }
 
     public String getModelo() {
-        return Modelo;
+        return Sopas;
     }
 
     public void setModelo(String Modelo) {
-        this.Modelo = Modelo;
+        this.Sopas = Modelo;
     }
 
     public String getColor() {
-        return Color;
+        return PlatoFuerte;
     }
 
     public void setColor(String Color) {
-        this.Color = Color;
+        this.PlatoFuerte = Color;
     }
 
     public String getPrecio() {
-        return Precio;
+        return PlatoSegundario;
     }
 
     public void setPrecio(String Precio) {
-        this.Precio = Precio;
+        this.PlatoSegundario = Precio;
     }
 
     public String getAño() {
-        return año;
+        return Postres;
     }
 
     public void setAño(String año) {
-        this.año = año;
+        this.Postres = año;
     }
        
 }

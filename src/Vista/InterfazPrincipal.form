@@ -156,7 +156,7 @@
               <Font name="Segoe UI" size="36" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="VEHICULOS"/>
+            <Property name="text" type="java.lang.String" value="RESTAURANTES"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnAgregarValor">
@@ -189,7 +189,7 @@
               <Font name="Segoe UI" size="14" style="0"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="MARCA DEL VEHICULO"/>
+            <Property name="text" type="java.lang.String" value="ENTRADAS"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtMarcaVehiculo">
@@ -206,7 +206,7 @@
               <Font name="Segoe UI" size="14" style="0"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="A&#xd1;O DEL VEHICULO"/>
+            <Property name="text" type="java.lang.String" value="SOPAS"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtA&#xf1;oVehiculo">
@@ -223,7 +223,7 @@
               <Font name="Segoe UI" size="14" style="0"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="MODELO DEL VEHICULO"/>
+            <Property name="text" type="java.lang.String" value="PLATOS FUERTES"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtModeloVehiculo">
@@ -240,7 +240,7 @@
               <Font name="Segoe UI" size="14" style="0"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="PRECIO DEL VEHICULO"/>
+            <Property name="text" type="java.lang.String" value="PLATOS SEGUNDARIOS"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtPrecioVehiculo">
@@ -281,7 +281,7 @@
               <Font name="Segoe UI" size="14" style="0"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="COLOR DEL VEHICULO"/>
+            <Property name="text" type="java.lang.String" value="POSTRES"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtColorVehiculo">
