@@ -63,7 +63,7 @@ public class InterfazPrincipal extends javax.swing.JFrame{
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("VEHICULOS");
+        setTitle("RESTAURANTE");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -385,7 +385,7 @@ public class InterfazPrincipal extends javax.swing.JFrame{
 
             System.out.println("" + list);
 
-            String elementToFind = JOptionPane.showInputDialog(null, "no encontrado");
+            String elementToFind = JOptionPane.showInputDialog(null, "Valor a buscar",null);
         
             int izquierda = 0;
             int derecha = lista.size();
@@ -405,7 +405,8 @@ public class InterfazPrincipal extends javax.swing.JFrame{
                 }
             }
             if (mitad != -1) {
-                System.out.println("Elemento encontrado en " + (mitad + 1));
+                JOptionPane.showMessageDialog(null, "Valor encontrado en "+(mitad+1)+" "+list, "ENCONTRADO", JOptionPane.INFORMATION_MESSAGE);
+                System.out.println("Elemento encontrado en " + (mitad + 1)+" "+list);
             } else {
                 System.out.println("Elemento no encontrado");
             }
