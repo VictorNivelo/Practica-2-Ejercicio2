@@ -410,7 +410,7 @@ public class InterfazPrincipal extends javax.swing.JFrame{
         
 
         if (mitad != -1) {
-            JOptionPane.showMessageDialog(null, "El elemento "+BuscarElemento+" se ha encontrado en la pocicion " + (indiceArreglo+1) + " en el conjunto " + Arrays.toString(lista.get(mitad)), BuscarElemento, JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El elemento "+BuscarElemento+" se ha encontrado en la pocicion " + (indiceArreglo+1) + " en el conjunto " + Arrays.toString(lista.get(indiceArreglo)), "ENCONTRADO", JOptionPane.INFORMATION_MESSAGE);
             System.out.println("Arreglo encontrado en " + (mitad + 1) + ": " + Arrays.toString(lista.get(mitad)));
         } else {
             JOptionPane.showMessageDialog(null, "Arreglo no encontrado", "NO ENCONTRADO", JOptionPane.ERROR_MESSAGE);
