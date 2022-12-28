@@ -7,6 +7,7 @@ package Vista;
 import Controlador.ControladorLista;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -255,8 +256,8 @@ public class InterfazPrincipal extends javax.swing.JFrame{
         
         System.out.println("==================== LISTA COMPLETA ======================");
         for (String[] arreglo : lista) {
-                System.out.println(Arrays.toString(arreglo));
-            }
+            System.out.println(Arrays.toString(arreglo));
+        }
         System.out.println("==========================================================");
 //        System.out.println("Guardando en json...");
 //        System.out.println("Guardado");
@@ -348,6 +349,8 @@ public class InterfazPrincipal extends javax.swing.JFrame{
 
     private void btnBusquedaLinealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBusquedaLinealActionPerformed
         // TODO add your handling code here:
+        
+        
         String DatosBuscar = JOptionPane.showInputDialog(null, "Escriba la elemento que desea buscar", "BUSCAR Plato", JOptionPane.WARNING_MESSAGE);
         Integer index = ControladorLista.Secuencial(lista, DatosBuscar)+1;
         
@@ -370,48 +373,91 @@ public class InterfazPrincipal extends javax.swing.JFrame{
     }//GEN-LAST:event_btnBusquedaLinealActionPerformed
 
     private void btnBusquedaBinariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBusquedaBinariaActionPerformed
-        // TODO add your handling code here:
-        for (int i = 0; i < lista.size(); i++) {
-            for(int j = 0; j < lista.size(); j++){
-                
-            String[] firstArray = lista.get(i);
-            String arreglo = Arrays.asList(firstArray).toString();
 
-//            System.out.println(Arrays.asList(firstArray));
-//            System.out.println(""+arreglo);
-            List<String> list = Arrays.asList(arreglo);
-
-//            Collections.sort(list);
-
-            System.out.println("" + list);
-
-            String elementToFind = JOptionPane.showInputDialog(null, "Valor a buscar",null);
+        String BuscarElemento = JOptionPane.showInputDialog(null, "Ingrese el valor a buscar", "BUSQUEDA", JOptionPane.INFORMATION_MESSAGE);
         
-            int izquierda = 0;
-            int derecha = lista.size();
-            int mitad = -1;
-
-            while (izquierda <= derecha) {
-                mitad = ((izquierda + derecha) / 2);
-
-                String mitadElemento = list.get(mitad);
-
-                if (mitadElemento.equals(elementToFind)) {
-                    break;
-                } else if (mitadElemento.compareTo(elementToFind) < 0) {
-                    izquierda = mitad + 1;
-                } else {
-                    derecha = mitad - 1;
+        int indiceArreglo = -1;
+        for (int i = 0; i < lista.size(); i++) {
+            for (int j = 0; j < lista.size(); j++) {
+                if (Arrays.asList(lista.get(i)).contains(BuscarElemento)) {
+                    indiceArreglo = i;
                 }
+                break;
             }
-            if (mitad != -1) {
-                JOptionPane.showMessageDialog(null, "Valor encontrado en "+(mitad+1)+" "+list, "ENCONTRADO", JOptionPane.INFORMATION_MESSAGE);
-                System.out.println("Elemento encontrado en " + (mitad + 1)+" "+list);
+        }
+        
+        int izquierda = 0;
+        int derecha = lista.size();
+        int mitad = -1;
+
+        lista.sort((a, b) -> a[0].compareTo(b[0]));
+        
+        while (izquierda <= derecha) {
+            
+            mitad = ((izquierda + derecha) / 2);
+
+            String[] mitadElemento = lista.get(mitad);
+
+            if (mitadElemento[4].equals(BuscarElemento)) {
+                break;
+            } else if (mitadElemento[4].compareTo(BuscarElemento) < 0) {
+                izquierda = mitad + 1;
             } else {
-                System.out.println("Elemento no encontrado");
+                derecha = mitad - 1;
             }
         }
+        
+        
+
+        if (mitad != -1) {
+            JOptionPane.showMessageDialog(null, "El elemento "+BuscarElemento+" se ha encontrado en la pocicion " + (indiceArreglo+1) + " en el conjunto " + Arrays.toString(lista.get(mitad)), BuscarElemento, JOptionPane.INFORMATION_MESSAGE);
+            System.out.println("Arreglo encontrado en " + (mitad + 1) + ": " + Arrays.toString(lista.get(mitad)));
+        } else {
+            JOptionPane.showMessageDialog(null, "Arreglo no encontrado", "NO ENCONTRADO", JOptionPane.ERROR_MESSAGE);
+            System.out.println("Arreglo no encontrado");
         }
+
+
+//        for (int i = 0; i < lista.size(); i++) {
+//            for (int j = 0; j < lista.size(); j++) {
+//
+//                String elementToFind = JOptionPane.showInputDialog(null, "Valor a buscar", null);
+////            String ArregloLista[] = lista.get(i);
+////                String arreglo = Arrays.toString(lista.get(i));
+//
+////            System.out.println(Arrays.asList(firstArray));
+////            System.out.println(""+arreglo);
+////                String firstElement = list.get(i);
+//                Collections.sort(lista);
+//                System.out.println("" + lista);
+//                System.out.println("" + arreglo);
+////                System.out.println(""+firstElement);
+//
+//                int izquierda = 0;
+//                int derecha = lista.size();
+//                int mitad = -1;
+//
+//                while (izquierda <= derecha) {
+//                    mitad = ((izquierda + derecha) / 2);
+//
+//                    String mitadElemento = lista.get(mitad);
+//
+//                    if (mitadElemento.equals(elementToFind)) {
+//                        break;
+//                    } else if (mitadElemento.compareTo(elementToFind) < 0) {
+//                        izquierda = mitad + 1;
+//                    } else {
+//                        derecha = mitad - 1;
+//                    }
+//                }
+//                if (mitad != -1) {
+//                    JOptionPane.showMessageDialog(null, "Valor encontrado en " + (mitad + 1) + " " + arreglo, "ENCONTRADO", JOptionPane.INFORMATION_MESSAGE);
+//                    System.out.println("Elemento encontrado en " + (mitad + 1) + " " + list);
+//                } else {
+//                    System.out.println("Elemento no encontrado");
+//                }
+//            }
+//        }
     }//GEN-LAST:event_btnBusquedaBinariaActionPerformed
 
     /**
