@@ -350,26 +350,49 @@ public class InterfazPrincipal extends javax.swing.JFrame{
     private void btnBusquedaLinealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBusquedaLinealActionPerformed
         // TODO add your handling code here:
         
+        String DatosBuscar = JOptionPane.showInputDialog(null, "Escriba la elemento que desea buscar", "BUSCAR PLATO", JOptionPane.INFORMATION_MESSAGE);
         
-        String DatosBuscar = JOptionPane.showInputDialog(null, "Escriba la elemento que desea buscar", "BUSCAR Plato", JOptionPane.WARNING_MESSAGE);
-        Integer index = ControladorLista.Secuencial(lista, DatosBuscar)+1;
-        
-        
-        for (int i = 0; i < lista.size(); i++) {
-            for (int j = 0; j < lista.size(); j++) {
-                if (index != null) {
-                    String Seleccionado = (Arrays.toString(lista.get(index - 1)));
+        int index = -1;
 
-                    JOptionPane.showMessageDialog(null, "Elemento " + DatosBuscar + " encontrado en el la lista numero " + index + " el elemento completo es " + Seleccionado, "ENCONTRADO", JOptionPane.INFORMATION_MESSAGE);
-                    System.out.println("Encontrado en el elemento numero " + index);
-                    
-                }break;
-//                else {
-//                    JOptionPane.showMessageDialog(null, "Elemento no encontrado", "NO ENCONTRADO", JOptionPane.INFORMATION_MESSAGE);
-//                    System.out.println("Elemento no encontrado");
-            }break;
+        for (int i = 0; i < lista.size(); i++) {
+            String[] arreglo = lista.get(i);
+            if (Arrays.asList(arreglo).contains(DatosBuscar)) {
+                index = i;
+                break;
+            }
+        }
+
+        if (index != -1) {
+//            String[] elementoEncontrado = lista.get(index);
+            String Seleccionado = (Arrays.toString(lista.get(index)));
+//            System.out.println("Elemento " + DatosBuscar + " encontrado en el índice " + index + ": " + Arrays.toString(elementoEncontrado));
+            JOptionPane.showMessageDialog(null, "Elemento " + DatosBuscar + " encontrado en el la lista numero " + (index+1) + " el elemento completo es " + Seleccionado, "ENCONTRADO", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+//            System.out.println("Elemento " + DatosBuscar + " no encontrado en la lista");
+            JOptionPane.showMessageDialog(null, "Elemento no encontrado", "NO ENCONTRADO", JOptionPane.ERROR_MESSAGE);
         }
         
+//        Integer index = ControladorLista.Secuencial(lista, DatosBuscar)+1;
+//        boolean encontrado = false;
+//        
+//        for (int i = 0; i < lista.size(); i++) {
+//            for (int j = 0; j < lista.size(); j++) {
+//                if (index != null) {
+//                    String Seleccionado = (Arrays.toString(lista.get(index - 1)));
+//
+//                    JOptionPane.showMessageDialog(null, "Elemento " + DatosBuscar + " encontrado en el la lista numero " + index + " el elemento completo es " + Seleccionado, "ENCONTRADO", JOptionPane.INFORMATION_MESSAGE);
+//                    System.out.println("Encontrado en el elemento numero " + index);
+//                    encontrado = true;
+//                }break;
+//                
+////                else {
+////                    JOptionPane.showMessageDialog(null, "Elemento no encontrado", "NO ENCONTRADO", JOptionPane.INFORMATION_MESSAGE);
+////                    System.out.println("Elemento no encontrado");
+//            }break;
+//        }
+//        if(index!=-1){
+//            JOptionPane.showMessageDialog(null, "Elemento no encontrado", "NO ENCONTRADO", JOptionPane.WARNING_MESSAGE);
+//        }
     }//GEN-LAST:event_btnBusquedaLinealActionPerformed
 
     private void btnBusquedaBinariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBusquedaBinariaActionPerformed
