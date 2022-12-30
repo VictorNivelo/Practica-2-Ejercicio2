@@ -4,16 +4,12 @@
  */
 package Vista;
 
-import Controlador.ControladorLista;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
-
-
 
 /**
  *
@@ -48,17 +44,17 @@ public class InterfazPrincipal extends javax.swing.JFrame{
         btnEliminarValor = new javax.swing.JButton();
         btnImprimirLista = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        txtMarcaVehiculo = new javax.swing.JTextField();
+        txtEntrada = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        txtAñoVehiculo = new javax.swing.JTextField();
+        txtSopas = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        txtModeloVehiculo = new javax.swing.JTextField();
+        txtPlatosFuertes = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        txtPrecioVehiculo = new javax.swing.JTextField();
+        txtPlatosSegundarios = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblVehiculos = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        txtColorVehiculo = new javax.swing.JTextField();
+        txtPostres = new javax.swing.JTextField();
         btnBusquedaLineal = new javax.swing.JButton();
         btnBusquedaBinaria = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
@@ -95,35 +91,32 @@ public class InterfazPrincipal extends javax.swing.JFrame{
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("ENTRADAS");
 
-        txtMarcaVehiculo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtEntrada.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("SOPAS");
 
-        txtAñoVehiculo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtSopas.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("PLATOS FUERTES");
 
-        txtModeloVehiculo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtPlatosFuertes.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("PLATOS SEGUNDARIOS");
 
-        txtPrecioVehiculo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtPlatosSegundarios.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         tblVehiculos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
         jScrollPane1.setViewportView(tblVehiculos);
@@ -132,7 +125,7 @@ public class InterfazPrincipal extends javax.swing.JFrame{
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("POSTRES");
 
-        txtColorVehiculo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtPostres.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         btnBusquedaLineal.setText("BUSQIEDA LINEAL");
         btnBusquedaLineal.addActionListener(new java.awt.event.ActionListener() {
@@ -171,9 +164,9 @@ public class InterfazPrincipal extends javax.swing.JFrame{
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(txtPrecioVehiculo, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtPlatosSegundarios, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
-                                    .addComponent(txtMarcaVehiculo, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtEntrada, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btnAgregarValor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,12 +176,12 @@ public class InterfazPrincipal extends javax.swing.JFrame{
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                             .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(txtColorVehiculo)
+                                            .addComponent(txtPostres)
                                             .addGap(256, 256, 256))
                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(txtAñoVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtSopas, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(txtModeloVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(txtPlatosFuertes, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addComponent(btnEliminarValor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -209,17 +202,17 @@ public class InterfazPrincipal extends javax.swing.JFrame{
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtMarcaVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtAñoVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtModeloVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSopas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPlatosFuertes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtPrecioVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtColorVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPlatosSegundarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPostres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAgregarValor)
@@ -254,11 +247,11 @@ public class InterfazPrincipal extends javax.swing.JFrame{
     private void btnImprimirListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirListaActionPerformed
         // TODO add your handling code here:
         
-        System.out.println("==================== LISTA COMPLETA ======================");
+        System.out.println("==================== LISTA RESTAURANTE ======================");
         for (String[] arreglo : lista) {
             System.out.println(Arrays.toString(arreglo));
         }
-        System.out.println("==========================================================");
+        System.out.println("=============================================================");
 //        System.out.println("Guardando en json...");
 //        System.out.println("Guardado");
         
@@ -273,11 +266,7 @@ public class InterfazPrincipal extends javax.swing.JFrame{
         for (int i = 0; i < lista.size(); i++) {
             for (int j = 0; j < lista.size(); j++) {
                 if (Arrays.asList(lista.get(i)).contains(DatosEliminar)) {
-                    indiceArreglo = i;
-                    
-//                }else{
-//                    JOptionPane.showMessageDialog(null, "El numero no se encuentra en la lista", "NUMERO NO VALIDO", JOptionPane.INFORMATION_MESSAGE);
-//                    
+                    indiceArreglo = i;      
                 }
                 break;
             }
@@ -306,38 +295,48 @@ public class InterfazPrincipal extends javax.swing.JFrame{
     private void btnAgregarValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarValorActionPerformed
         // TODO add your handling code here://
         
-        if(txtMarcaVehiculo.getText().isEmpty()){
+//        ControladorLista ac = new ControladorLista();
+//        ac.crearRestaurante();
+//        ac.getRestaurante().ordenarShell("precio",1).imprimir();
+//        try {
+//            ac.getRestaurante().busquedaBinariaSecuencial("precio", 22535.8f).imprimir();
+//        } catch (Exception e) {
+//            System.out.println("ERROR VACIO: "+e.getMessage()+"\nLinea: "+e.getStackTrace()[0].getLineNumber());
+//        }
+        
+        
+        if(txtEntrada.getText().isEmpty()){
             JOptionPane.showMessageDialog(null, "El cuadro de texto de la entrada del restaurante esta vacia", "ELEMENTO VACIO", JOptionPane.INFORMATION_MESSAGE);
         }
-        else if(txtAñoVehiculo.getText().isEmpty()){
+        else if(txtSopas.getText().isEmpty()){
             JOptionPane.showMessageDialog(null, "El cuadro de texto del las sopas del restaurante esta vacia", "ELEMENTO VACIO", JOptionPane.INFORMATION_MESSAGE);
         }
-        else if(txtModeloVehiculo.getText().isEmpty()){
+        else if(txtPlatosFuertes.getText().isEmpty()){
             JOptionPane.showMessageDialog(null, "El cuadro de texto del plato principal del restaurante esta vacia", "ELEMENTO VACIO", JOptionPane.INFORMATION_MESSAGE);
         }
-        else if(txtPrecioVehiculo.getText().isEmpty()){
+        else if(txtPlatosSegundarios.getText().isEmpty()){
             JOptionPane.showMessageDialog(null, "El cuadro de texto del plato segundario del restaurante esta vacia", "ELEMENTO VACIO", JOptionPane.INFORMATION_MESSAGE);
         }
-        else if(txtColorVehiculo.getText().isEmpty()){
+        else if(txtPostres.getText().isEmpty()){
             JOptionPane.showMessageDialog(null, "El cuadro de texto del postre del restaurante esta vacia", "ELEMENTO VACIO", JOptionPane.INFORMATION_MESSAGE);
         }
         else{
-            String Marca = txtMarcaVehiculo.getText();
-            String Año = txtAñoVehiculo.getText();
-            String Modelo = txtModeloVehiculo.getText();
-            String Precio = txtPrecioVehiculo.getText();
-            String Color = txtColorVehiculo.getText();
+            String Entrada = txtEntrada.getText();
+            String Sopas = txtSopas.getText();
+            String PlatoFuerte = txtPlatosFuertes.getText();
+            String PlatoSegundario = txtPlatosSegundarios.getText();
+            String Postres = txtPostres.getText();
 
-            String[] DatosAutos = new String[5];
+            String[] DatosRestaurante = new String[5];
 
-            DatosAutos[0] = Marca;
-            DatosAutos[1] = Año;
-            DatosAutos[2] = Modelo;
-            DatosAutos[3] = Precio;
-            DatosAutos[4] = Color;
+            DatosRestaurante[0] = Entrada;
+            DatosRestaurante[1] = Sopas;
+            DatosRestaurante[2] = PlatoFuerte;
+            DatosRestaurante[3] = PlatoSegundario;
+            DatosRestaurante[4] = Postres;
 
             if (lista.size() < 20) {
-                lista.add(DatosAutos);
+                lista.add(DatosRestaurante);
             } else {
                 JOptionPane.showMessageDialog(null, "El numero de pedidos maximos es de 20", "NUMERO MAXIMO ALCANZADO", JOptionPane.INFORMATION_MESSAGE);
             }
@@ -349,6 +348,7 @@ public class InterfazPrincipal extends javax.swing.JFrame{
 
     private void btnBusquedaLinealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBusquedaLinealActionPerformed
         // TODO add your handling code here:
+        
         
         String DatosBuscar = JOptionPane.showInputDialog(null, "Escriba la elemento que desea buscar", "BUSCAR PLATO", JOptionPane.INFORMATION_MESSAGE);
         
@@ -533,10 +533,10 @@ public class InterfazPrincipal extends javax.swing.JFrame{
     public static javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     public static javax.swing.JTable tblVehiculos;
-    public static javax.swing.JTextField txtAñoVehiculo;
-    public static javax.swing.JTextField txtColorVehiculo;
-    public static javax.swing.JTextField txtMarcaVehiculo;
-    public static javax.swing.JTextField txtModeloVehiculo;
-    public static javax.swing.JTextField txtPrecioVehiculo;
+    public static javax.swing.JTextField txtEntrada;
+    public static javax.swing.JTextField txtPlatosFuertes;
+    public static javax.swing.JTextField txtPlatosSegundarios;
+    public static javax.swing.JTextField txtPostres;
+    public static javax.swing.JTextField txtSopas;
     // End of variables declaration//GEN-END:variables
 }

@@ -61,9 +61,9 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="txtPrecioVehiculo" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtPlatosSegundarios" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel6" alignment="0" pref="244" max="32767" attributes="0"/>
-                                      <Component id="txtMarcaVehiculo" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtEntrada" alignment="0" max="32767" attributes="0"/>
                                       <Component id="btnAgregarValor" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -75,13 +75,13 @@
                                               <Component id="jLabel8" min="-2" pref="244" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="txtColorVehiculo" max="32767" attributes="0"/>
+                                              <Component id="txtPostres" max="32767" attributes="0"/>
                                               <EmptySpace min="-2" pref="256" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="txtAñoVehiculo" min="-2" pref="244" max="-2" attributes="0"/>
+                                              <Component id="txtSopas" min="-2" pref="244" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="txtModeloVehiculo" min="-2" pref="244" max="-2" attributes="0"/>
+                                              <Component id="txtPlatosFuertes" min="-2" pref="244" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Component id="btnEliminarValor" alignment="1" min="-2" pref="244" max="-2" attributes="0"/>
@@ -113,9 +113,9 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtMarcaVehiculo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtAñoVehiculo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtModeloVehiculo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtEntrada" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtSopas" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtPlatosFuertes" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -124,8 +124,8 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtPrecioVehiculo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtColorVehiculo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtPlatosSegundarios" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtPostres" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -192,7 +192,7 @@
             <Property name="text" type="java.lang.String" value="ENTRADAS"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtMarcaVehiculo">
+        <Component class="javax.swing.JTextField" name="txtEntrada">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
           </Properties>
@@ -209,7 +209,7 @@
             <Property name="text" type="java.lang.String" value="SOPAS"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtA&#xf1;oVehiculo">
+        <Component class="javax.swing.JTextField" name="txtSopas">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
           </Properties>
@@ -226,7 +226,7 @@
             <Property name="text" type="java.lang.String" value="PLATOS FUERTES"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtModeloVehiculo">
+        <Component class="javax.swing.JTextField" name="txtPlatosFuertes">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
           </Properties>
@@ -243,7 +243,7 @@
             <Property name="text" type="java.lang.String" value="PLATOS SEGUNDARIOS"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtPrecioVehiculo">
+        <Component class="javax.swing.JTextField" name="txtPlatosSegundarios">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
           </Properties>
@@ -261,12 +261,7 @@
             <Component class="javax.swing.JTable" name="tblVehiculos">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="4" rowCount="4">
-                    <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                    <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                    <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                    <Column editable="true" title="Title 4" type="java.lang.Object"/>
-                  </Table>
+                  <Table columnCount="0" rowCount="0"/>
                 </Property>
               </Properties>
               <AuxValues>
@@ -284,7 +279,7 @@
             <Property name="text" type="java.lang.String" value="POSTRES"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtColorVehiculo">
+        <Component class="javax.swing.JTextField" name="txtPostres">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
           </Properties>

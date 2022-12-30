@@ -10,53 +10,58 @@ package Modelo;
  * @author Victor
  */
 public class Restaurante {
-
-    public Restaurante(String showInputDialog, String showInputDialog1) {
-    }
-    private String Entradas;
+    
+    private String Entrada;
     private String Sopas;
     private String PlatoFuerte;
     private String PlatoSegundario;
     private String Postres;
-
-    public String getMarca() {
-        return Entradas;
+    
+    public Restaurante(String Entrada, String Sopas, String PlatoFuerte, String PlatoSegundario, String Postres) {
+        this.Entrada = Entrada;
+        this.Sopas = Sopas;
+        this.PlatoFuerte = PlatoFuerte;
+        this.PlatoSegundario = PlatoSegundario;
+        this.Postres = Postres;
     }
 
-    public void setMarca(String Marca) {
-        this.Entradas = Marca;
+    public String getEntradas() {
+        return Entrada;
     }
 
-    public String getModelo() {
+    public void setEntradas(String Entradas) {
+        this.Entrada = Entradas;
+    }
+
+    public String getSopas() {
         return Sopas;
     }
 
-    public void setModelo(String Modelo) {
-        this.Sopas = Modelo;
+    public void setSopas(String Sopas) {
+        this.Sopas = Sopas;
     }
 
-    public String getColor() {
+    public String getPlatoFuerte() {
         return PlatoFuerte;
     }
 
-    public void setColor(String Color) {
-        this.PlatoFuerte = Color;
+    public void setPlatoFuerte(String PlatoFuerte) {
+        this.PlatoFuerte = PlatoFuerte;
     }
 
-    public String getPrecio() {
+    public String getPlatoSegundario() {
         return PlatoSegundario;
     }
 
-    public void setPrecio(String Precio) {
-        this.PlatoSegundario = Precio;
+    public void setPlatoSegundario(String PlatoSegundario) {
+        this.PlatoSegundario = PlatoSegundario;
     }
 
-    public String getAño() {
+    public String getPostres() {
         return Postres;
     }
 
-    public void setAño(String año) {
-        this.Postres = año;
-    }
-       
+    public void setPostres(String Postres) {
+        this.Postres = Postres;
+    } 
 }
