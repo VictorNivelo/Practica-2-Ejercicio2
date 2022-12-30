@@ -388,7 +388,7 @@ public class InterfazPrincipal extends javax.swing.JFrame{
         
         int izquierda = 0;
         int derecha = lista.size();
-        int mitad = -1;
+        int mitad = 1;
 
         lista.sort((a, b) -> a[0].compareTo(b[0]));
         
@@ -398,19 +398,17 @@ public class InterfazPrincipal extends javax.swing.JFrame{
 
             String[] mitadElemento = lista.get(mitad);
 
-            if (mitadElemento[4].equals(BuscarElemento)) {
+            if (mitadElemento[0].equals(BuscarElemento)) {
                 break;
-            } else if (mitadElemento[4].compareTo(BuscarElemento) < 0) {
+            } else if (mitadElemento[0].compareTo(BuscarElemento) < 0) {
                 izquierda = mitad + 1;
             } else {
                 derecha = mitad - 1;
             }
         }
-        
-        
 
         if (mitad != -1) {
-            JOptionPane.showMessageDialog(null, "El elemento "+BuscarElemento+" se ha encontrado en la pocicion " + (indiceArreglo+1) + " en el conjunto " + Arrays.toString(lista.get(indiceArreglo)), "ENCONTRADO", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El elemento "+BuscarElemento+" se ha encontrado en la pocicion " + (indiceArreglo+1) + " en el conjunto " + Arrays.toString(lista.get(mitad)), "ENCONTRADO", JOptionPane.INFORMATION_MESSAGE);
             System.out.println("Arreglo encontrado en " + (mitad + 1) + ": " + Arrays.toString(lista.get(mitad)));
         } else {
             JOptionPane.showMessageDialog(null, "Arreglo no encontrado", "NO ENCONTRADO", JOptionPane.ERROR_MESSAGE);
