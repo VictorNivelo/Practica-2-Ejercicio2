@@ -4,6 +4,9 @@
  */
 package Vista;
 
+import com.google.gson.Gson;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -52,7 +55,7 @@ public class InterfazPrincipal extends javax.swing.JFrame{
         jLabel9 = new javax.swing.JLabel();
         txtPlatosSegundarios = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblVehiculos = new javax.swing.JTable();
+        tblRestaurante = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         txtPostres = new javax.swing.JTextField();
         btnBusquedaLineal = new javax.swing.JButton();
@@ -111,7 +114,7 @@ public class InterfazPrincipal extends javax.swing.JFrame{
 
         txtPlatosSegundarios.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        tblVehiculos.setModel(new javax.swing.table.DefaultTableModel(
+        tblRestaurante.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -119,7 +122,7 @@ public class InterfazPrincipal extends javax.swing.JFrame{
 
             }
         ));
-        jScrollPane1.setViewportView(tblVehiculos);
+        jScrollPane1.setViewportView(tblRestaurante);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -252,8 +255,19 @@ public class InterfazPrincipal extends javax.swing.JFrame{
             System.out.println(Arrays.toString(arreglo));
         }
         System.out.println("=============================================================");
-//        System.out.println("Guardando en json...");
-//        System.out.println("Guardado");
+        
+        Gson gson = new Gson();
+
+
+        String json = gson.toJson(lista);
+
+        try (FileWriter writer = new FileWriter("lista.json")) {
+            writer.write(json);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        System.out.println("Archivo guardado exitosamente");
         
     }//GEN-LAST:event_btnImprimirListaActionPerformed
 
@@ -280,14 +294,14 @@ public class InterfazPrincipal extends javax.swing.JFrame{
                 if (Arrays.asList(lista.get(i)).contains(DatosEliminar)) {
                     lista.remove(indiceArreglo);
                     int pos = indiceArreglo + 1;
-                    ((DefaultTableModel) tblVehiculos.getModel()).removeRow(indiceArreglo);
+                    ((DefaultTableModel) tblRestaurante.getModel()).removeRow(indiceArreglo);
                     JOptionPane.showMessageDialog(null, "El elemento " + DatosEliminar + " encontrado en la posicion " + pos + " ha sido eliminado", "ELEMENTO ELIMINADO", JOptionPane.WARNING_MESSAGE);
                     break;
                 }
                 break;
             }
         }
-//        } else {
+//        else {
 //            JOptionPane.showMessageDialog(null, "El elemento que desea eliminar no esta dentro de las marcas", "NO EXISTE MARCA", JOptionPane.ERROR_MESSAGE);
 //        }
     }//GEN-LAST:event_btnEliminarValorActionPerformed
@@ -341,7 +355,7 @@ public class InterfazPrincipal extends javax.swing.JFrame{
                 JOptionPane.showMessageDialog(null, "El numero de pedidos maximos es de 20", "NUMERO MAXIMO ALCANZADO", JOptionPane.INFORMATION_MESSAGE);
             }
             TableModel modelo = new DefaultTableModel(lista.toArray(new String[lista.size()][]), new String[]{"Entrada", "Sopa", "Plato principal", "Plato segundario", "Postre"});
-            tblVehiculos.setModel(modelo);
+            tblRestaurante.setModel(modelo);
         }
 
     }//GEN-LAST:event_btnAgregarValorActionPerformed
@@ -433,10 +447,10 @@ public class InterfazPrincipal extends javax.swing.JFrame{
         
         if (indiceArreglo != -1) {
             JOptionPane.showMessageDialog(null, "El elemento "+BuscarElemento+" se ha encontrado en la pocicion " + (indiceArreglo+1) + " en el conjunto " + Arrays.toString(lista.get(indiceArreglo)), "ENCONTRADO", JOptionPane.INFORMATION_MESSAGE);
-            System.out.println("Arreglo encontrado en " + (indiceArreglo + 1) + ": " + Arrays.toString(lista.get(indiceArreglo)));
+//            System.out.println("Arreglo encontrado en " + (indiceArreglo + 1) + ": " + Arrays.toString(lista.get(indiceArreglo)));
         } else {
             JOptionPane.showMessageDialog(null, "Arreglo no encontrado", "NO ENCONTRADO", JOptionPane.ERROR_MESSAGE);
-            System.out.println("Arreglo no encontrado");
+//            System.out.println("Arreglo no encontrado");
         }
 
 
@@ -532,7 +546,7 @@ public class InterfazPrincipal extends javax.swing.JFrame{
     private javax.swing.JLabel jLabel9;
     public static javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    public static javax.swing.JTable tblVehiculos;
+    public static javax.swing.JTable tblRestaurante;
     public static javax.swing.JTextField txtEntrada;
     public static javax.swing.JTextField txtPlatosFuertes;
     public static javax.swing.JTextField txtPlatosSegundarios;
