@@ -5,14 +5,15 @@
 package Vista;
 
 import com.google.gson.Gson;
+import java.util.List;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import javax.swing.JOptionPane;
+import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
-                                                                                                                                                                                            import java.util.ArrayList;
-                                                                                                                                                                                            import java.util.Arrays;
-                                                                                                                                                                                            import java.util.List;
+
 /**
  *
  * @author Victor
