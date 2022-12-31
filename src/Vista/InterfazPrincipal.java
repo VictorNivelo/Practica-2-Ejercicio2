@@ -7,13 +7,12 @@ package Vista;
 import com.google.gson.Gson;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
-
+                                                                                                                                                                                            import java.util.ArrayList;
+                                                                                                                                                                                            import java.util.Arrays;
+                                                                                                                                                                                            import java.util.List;
 /**
  *
  * @author Victor
