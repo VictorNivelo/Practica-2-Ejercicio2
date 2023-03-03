@@ -249,25 +249,27 @@ public class InterfazPrincipal extends javax.swing.JFrame{
 
     private void btnImprimirListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirListaActionPerformed
         // TODO add your handling code here:
-        
-        System.out.println("==================== LISTA RESTAURANTE ======================");
-        for (String[] arreglo : lista) {
-            System.out.println(Arrays.toString(arreglo));
+        if(lista.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Lista vacia", "VACIA", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            System.out.println("==================== LISTA RESTAURANTE ======================");
+            for (String[] arreglo : lista) {
+                System.out.println(Arrays.toString(arreglo));
+            }
+            System.out.println("=============================================================");
+
+            Gson gson = new Gson();
+
+            String json = gson.toJson(lista);
+
+            try (FileWriter writer = new FileWriter("lista.json")) {
+                writer.write(json);
+                System.out.println("Archivo guardado exitosamente");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-        System.out.println("=============================================================");
         
-        Gson gson = new Gson();
-
-
-        String json = gson.toJson(lista);
-
-        try (FileWriter writer = new FileWriter("lista.json")) {
-            writer.write(json);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        
-        System.out.println("Archivo guardado exitosamente");
         
     }//GEN-LAST:event_btnImprimirListaActionPerformed
 
@@ -287,7 +289,7 @@ public class InterfazPrincipal extends javax.swing.JFrame{
         }
         
 //        JOptionPane.showMessageDialog(null, "El numero no se encuentra en la lista", "NUMERO NO VALIDO", JOptionPane.INFORMATION_MESSAGE);
-        
+        Boolean existe =false;
 //        if (indiceArreglo == 1) {
         for (int i = 0; i < lista.size(); i++) {
             for (int j = 0; j < lista.size(); j++) {
@@ -296,14 +298,20 @@ public class InterfazPrincipal extends javax.swing.JFrame{
                     int pos = indiceArreglo + 1;
                     ((DefaultTableModel) tblRestaurante.getModel()).removeRow(indiceArreglo);
                     JOptionPane.showMessageDialog(null, "El elemento " + DatosEliminar + " encontrado en la posicion " + pos + " ha sido eliminado", "ELEMENTO ELIMINADO", JOptionPane.WARNING_MESSAGE);
+                    existe = true;
                     break;
+                    
                 }
                 break;
+                
             }
         }
-//        else {
-//            JOptionPane.showMessageDialog(null, "El elemento que desea eliminar no esta dentro de las marcas", "NO EXISTE MARCA", JOptionPane.ERROR_MESSAGE);
-//        }
+        if(existe == true){
+            
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "El elemento que desea eliminar no esta dentro de los platos", "NO EXISTE MARCA", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnEliminarValorActionPerformed
 
     private void btnAgregarValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarValorActionPerformed
@@ -380,10 +388,10 @@ public class InterfazPrincipal extends javax.swing.JFrame{
 //            String[] elementoEncontrado = lista.get(index);
             String Seleccionado = (Arrays.toString(lista.get(index)));
 //            System.out.println("Elemento " + DatosBuscar + " encontrado en el índice " + index + ": " + Arrays.toString(elementoEncontrado));
-            JOptionPane.showMessageDialog(null, "Elemento " + DatosBuscar + " encontrado en el la lista numero " + (index+1) + " el elemento completo es " + Seleccionado, "ENCONTRADO", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Platp " + DatosBuscar + " encontrado en el la lista numero " + (index+1) + " el pedido completo es " + Seleccionado, "ENCONTRADO", JOptionPane.INFORMATION_MESSAGE);
         } else {
 //            System.out.println("Elemento " + DatosBuscar + " no encontrado en la lista");
-            JOptionPane.showMessageDialog(null, "Elemento no encontrado", "NO ENCONTRADO", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Plato no encontrado", "NO ENCONTRADO", JOptionPane.ERROR_MESSAGE);
         }
         
 //        Integer index = ControladorLista.Secuencial(lista, DatosBuscar)+1;
@@ -438,7 +446,8 @@ public class InterfazPrincipal extends javax.swing.JFrame{
             if (mitadElemento[0].equals(BuscarElemento)) {
                 indiceArreglo = mitad;
                 break;
-            } else if (mitadElemento[0].compareTo(BuscarElemento) < 0) {
+            } 
+            else if (mitadElemento[0].compareTo(BuscarElemento) < 0) {
                 izquierda = mitad + 1;
             } else {
                 derecha = mitad - 1;
@@ -446,10 +455,10 @@ public class InterfazPrincipal extends javax.swing.JFrame{
         }
         
         if (indiceArreglo != -1) {
-            JOptionPane.showMessageDialog(null, "El elemento "+BuscarElemento+" se ha encontrado en la pocicion " + (indiceArreglo+1) + " en el conjunto " + Arrays.toString(lista.get(indiceArreglo)), "ENCONTRADO", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El plato "+BuscarElemento+" se ha encontrado en la pocicion " + (indiceArreglo+1) + " en el pedido " + Arrays.toString(lista.get(indiceArreglo)), "ENCONTRADO", JOptionPane.INFORMATION_MESSAGE);
 //            System.out.println("Arreglo encontrado en " + (indiceArreglo + 1) + ": " + Arrays.toString(lista.get(indiceArreglo)));
         } else {
-            JOptionPane.showMessageDialog(null, "Arreglo no encontrado", "NO ENCONTRADO", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Plato no encontrado", "NO ENCONTRADO", JOptionPane.ERROR_MESSAGE);
 //            System.out.println("Arreglo no encontrado");
         }
 
